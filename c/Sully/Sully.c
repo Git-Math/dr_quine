@@ -1,4 +1,4 @@
-#define Sully "#define Sully %c%s%c%c%c#include<stdio.h>%c#include<string.h>%c#include<stdlib.h>%c%cint main(void) {%c	int i = %d;%c	char filename[19];%c	char exe_name[19];%c	char cmd[49];%c	FILE *fd;%c%c	if (i < 0) /* no negative values */%c		return 0;%c	if (strchr(__FILE__, '_')) /* decrement i except the first time */%c		i--;%c	sprintf(filename, %cSully_%cd.c%c, i);%c	fd = fopen(filename, %cw%c);%c	if (!fd)%c	{%c		printf(%cfopen Sully_%cd.c failed%c, i);%c		return 0;%c	}%c	fprintf(fd, Sully, 34, Sully, 34, 10, 10, 10, 10, 10, 10, 10, i, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 34, 10, 10, 10, 34, 37, 34, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 37, 37, 34, 10, 10, 10, 10, 10, 10);%c	fclose(fd);%c	sprintf(exe_name, %c./Sully_%cd%c, i);%c	sprintf(cmd, %cgcc %cs -o %cs%c, filename, exe_name);%c	system(cmd);%c	if (i) /* continue condition */%c		system(exe_name);%c	return 0;%c}%c"
+#define SULLY "#define SULLY %c%s%c%c%c#include<stdio.h>%c#include<string.h>%c#include<stdlib.h>%c%cint main(void) {%c	int i = %d;%c	char filename[19];%c	char exe_name[19];%c	char cmd[49];%c	FILE *fd;%c%c	if (i < 0) /* no negative values */%c		return 0;%c	if (strchr(__FILE__, '_')) /* decrement i except the first time */%c		i--;%c	sprintf(filename, %cSully_%cd.c%c, i);%c	fd = fopen(filename, %cw%c);%c	if (!fd)%c	{%c		printf(%cfopen Sully_%cd.c failed%c, i);%c		return 0;%c	}%c	fprintf(fd, SULLY, 34, SULLY, 34, 10, 10, 10, 10, 10, 10, 10, i, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 34, 10, 10, 10, 34, 37, 34, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 37, 37, 34, 10, 10, 10, 10, 10, 10);%c	fclose(fd);%c	sprintf(exe_name, %c./Sully_%cd%c, i);%c	sprintf(cmd, %cgcc %cs -o %cs%c, filename, exe_name);%c	system(cmd);%c	if (i) /* continue condition */%c		system(exe_name);%c	return 0;%c}%c"
 
 #include<stdio.h>
 #include<string.h>
@@ -22,7 +22,7 @@ int main(void) {
 		printf("fopen Sully_%d.c failed", i);
 		return 0;
 	}
-	fprintf(fd, Sully, 34, Sully, 34, 10, 10, 10, 10, 10, 10, 10, i, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 34, 10, 10, 10, 34, 37, 34, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 37, 37, 34, 10, 10, 10, 10, 10, 10);
+	fprintf(fd, SULLY, 34, SULLY, 34, 10, 10, 10, 10, 10, 10, 10, i, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 34, 10, 10, 10, 34, 37, 34, 10, 10, 10, 10, 10, 34, 37, 34, 10, 34, 37, 37, 34, 10, 10, 10, 10, 10, 10);
 	fclose(fd);
 	sprintf(exe_name, "./Sully_%d", i);
 	sprintf(cmd, "gcc %s -o %s", filename, exe_name);

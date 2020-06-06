@@ -26,7 +26,7 @@ OBJD = $(addprefix $(OBJDIR), $(D))
 
 ASM = nasm -f elf64
 
-CC = gcc
+CC = clang
 
 FLAGS = -Wall -Werror -Wextra
 

@@ -20,7 +20,7 @@ OBJDIR = ./obj/
 
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
-CC = gcc
+CC = clang
 
 FLAGS = -Wall -Werror -Wextra
 

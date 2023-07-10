@@ -15,7 +15,7 @@ source file).
 From a Colleen/Grace/Sully directory run `make`
 
 ## How to run
-From a Colleen/Grave/Sully directory run `./Colleen`
+From a Colleen/Grace/Sully directory run `./Colleen`
 
 # Examples
 ```
